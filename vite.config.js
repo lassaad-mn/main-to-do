@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite"
 import path from "path"
 import.meta.dirname
 export default defineConfig({
+  base:"/main-to-do",
   plugins: [
     react(),
     tailwindcss(),
