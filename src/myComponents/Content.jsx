@@ -39,20 +39,21 @@ export function Content({children}) {
           <Pagination >
             <PaginationContent>
               <PaginationItem>
-                <PaginationLink href="#" className={"w-full p-4"} onClick={()=>setActivePage(4)}  isActive={activePage==4?true:false}> <Link to='/TasksUnCompleted'><span>الغير منجز</span></Link></PaginationLink>
+                <PaginationLink href="/main-to-do/TasksUnCompleted" className={"w-full p-4"} onClick={()=>setActivePage(4)}  isActive={activePage==4?true:false}> <Link to='/TasksUnCompleted'><span>الغير منجز</span></Link></PaginationLink>
               </PaginationItem>
+              
               <PaginationItem>
-                <PaginationLink href="#" className={"w-full p-4"} onClick={()=>setActivePage(3)}  isActive={activePage==3?true:false}><Link to='/TasksCompleted'><span>المنجز</span></Link></PaginationLink>
+                <span><PaginationLink href="/main-to-do/TasksCompleted"  className={"w-full p-4"} onClick={()=>setActivePage(3)}  isActive={activePage==3?true:false}><Link to='/TasksCompleted'><span>المنجز</span></Link></PaginationLink></span>
               </PaginationItem>
               <PaginationItem>
                 
-              <PaginationLink className={"w-full p-4"}  href="#" onClick={()=>setActivePage(2)}  isActive={activePage==2?true:false} >
+              <PaginationLink className={"w-full p-4"}  href="/main-to-do/All" onClick={()=>setActivePage(2)}  isActive={activePage==2?true:false} >
                    <Link to='/All'><span> الكل</span></Link>
               </PaginationLink>
                
               </PaginationItem>
               <PaginationItem >
-                <PaginationLink className={"w-full p-4"} href="#" onClick={()=>setActivePage(1)}  isActive={activePage==1?true:false}><Link to='/'><span >أدخل المهام</span></Link></PaginationLink>
+                <PaginationLink className={"w-full p-4"} href="/main-to-do/" onClick={()=>setActivePage(1)}  isActive={activePage==1?true:false}><Link to='/'><span >أدخل المهام</span></Link></PaginationLink>
               </PaginationItem>
             </PaginationContent>
           </Pagination>

@@ -50,7 +50,8 @@ export function AllTasks() {
   }
   const [tasksCompleted,setTasksCompleted]=useState(dataCompleted)
   localStorage.setItem("tasksCompleted",JSON.stringify(tasksCompleted))
-  function taskCompleted(item){
+  function taskCompleted(item,i){
+    setTask(task.filter((_,x)=>x!=i))
     setTasksCompleted([...tasksCompleted,item])
   }
   return (
@@ -60,15 +61,15 @@ export function AllTasks() {
         <Item key={i} variant="outline" className={"mt-3"}>
             <ItemContent>
               <ItemTitle>{item}</ItemTitle>
-              <ItemDescription>Last seen 5 months ago</ItemDescription>
+              <ItemDescription></ItemDescription>
               
             </ItemContent>
             <ItemActions>
               <Button
                 size="icon-sm"
                 variant="outline"
-                className="rounded-full"
-                aria-label="Invite" onClick={()=>taskCompleted(item)}
+                className="rounded-full shadow bg-green-500 cursor-pointer hover:scale-125"
+                aria-label="Invite" onClick={()=>taskCompleted(item,i)}
               >
                 <Check />
               </Button>
@@ -77,7 +78,7 @@ export function AllTasks() {
                       
                         size="icon-sm"
                         variant="outline"
-                        className="rounded-full"
+                        className="rounded-full shadow bg-amber-600 cursor-pointer hover:scale-125"
                         aria-label="Invite"
                       >
                       <Pencil />
@@ -103,7 +104,7 @@ export function AllTasks() {
               <Button onClick={()=>deleteTask(i)} 
                 size="icon-sm"
                 variant="outline"
-                className="rounded-full"
+                className="rounded-full shadow bg-red-500 cursor-pointer hover:scale-125"
                 aria-label="Invite"
               >
                 <Trash />
